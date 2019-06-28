@@ -48,14 +48,18 @@
 	
 	<script type="text/javascript">
 		const releaseDate = new Date("2019-07-15T10:00:00.000Z");
+		const redirectURL = "https://ths.kth.se/";
+
+		setTime();
 		const timerInterval = setInterval(function() {
 			setTime();
 		}, 30000)
 
-		setTime();
-
 		function setTime() {
-			const time = releaseDate - Date.now();
+			const time = releaseDate.getTime() - Date.now();
+			if (time < 0) {
+				redirect();
+			}
 
 			const days = Math.floor(time / 1000 / 60 / 60 / 24);
 			const hours = Math.floor((time / 1000 / 60 / 60) % 24);
@@ -80,6 +84,10 @@
 
 		function leadingZero(num) {
 			return num < 10 ? '0' + num : num;
+		}
+
+		function redirect() {
+			location.href = redirectURL;
 		}
 	</script>
 </body>
