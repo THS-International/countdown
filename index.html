@@ -42,6 +42,14 @@
 			background-color: #fcd581;
 			cursor: pointer;
 		}
+
+		#calendarIframe {
+			width: 600px;
+			max-width: 100%;
+			height: 600px;
+			border-width:0;
+			margin: 10px 0 20px 0;
+		}
 	</style>
 </head>
 <body>
@@ -59,11 +67,13 @@
 			<p>
 				We are currently preparing the event signup for the THS International Fall Reception 2019. The signup will open on the 15th July 12:00 noon CET.
 				<br>
-				<small>Remember: There can always be delays the preparation of the event signup.</small>
+				<small>Remember: There can always be delays in the preparation of the event signup.</small>
 			</p>
-			<div id="button-box">
-				<button onclick="showEventSchedule()">Show Event Schedule</button>
-			</div>
+		</div>
+		<iframe id="calendarIframe" src="https://calendar.google.com/calendar/embed?title=Introduction%20Programme%202019&mode=AGENDA&wkst=2&dates=20190801%2F20190915&bgcolor=%23FFFFFF&src=kthisd%40gmail.com&color=%232952A3&src=thskth.se_8a4otmpb9lg9elke39b99algu0@group.calendar.google.com&color=%231B887A&ctz=Europe%2FStockholm;%20&hl=en" scrolling="no" frameborder="0"></iframe>
+
+		<div id="button-box">
+			<button onclick="showEventSchedule()">Show More</button>
 		</div>
 	</div>
 	
