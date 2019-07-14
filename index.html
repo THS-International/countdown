@@ -21,120 +21,39 @@
 			text-align: center;
 		}
 
-		#content-box > img {
-			max-width: 60%;
-		}
-
 		#text-box {
 			padding-top: 25px;
 		}
 
-		#text-box > p {
-			line-height: 1.3em;
+		a {
+			color: white;
 		}
 
-		#button-box > button {
-			background-color: #fff8e8;
-			font-weight: bold;
-			border: 0;
-			margin: 10px 0;
-			padding: 7px 12px;
-			vertical-align: middle;
-		}
-
-		#button-box > button:hover {
-			background-color: #fcd581;
-			cursor: pointer;
-		}
-
-		#calendarIframe {
-			width: 600px;
-			max-width: 100%;
-			height: 600px;
-			border-width:0;
-			margin: 10px 0 20px 0;
-		}
-
-		.highlight-text {
-			padding: 2px;
-			background-color: white;
-			color: black;
+		a:hover {
+			color: lightgray;
 		}
 	</style>
 </head>
 <body>
 
 	<div id="content-box">
-		<img alt="THS International Reception" src="res/thsint_logo.png" />
 
 		<div id="text-box">
-			<h1 style="display: none;">THS International Reception - Signup</h1>
-			<h2>
-				The Signup for events will be available in
-				<br>
-				<span id="days">00</span> - <span id="hours">00</span> - <span id="minutes">00</span>
-			</h2>
+			<h1>You are beeing redirected.</h1>
 			<p>
-				We are currently preparing the event signup for the THS International Fall Reception 2019. The signup will open on the <span class="highlight-text">17th July 12:00 noon CET</span>.
-				<br>
-				<small>Remember: There can always be delays in the preparation of the event signup.</small>
+				If the redirect is not working <a href="https://international-reception.thskth.se/">click here</a>.
 			</p>
-		</div>
-		<iframe id="calendarIframe" src="https://calendar.google.com/calendar/embed?title=Introduction%20Programme%202019&mode=AGENDA&wkst=2&dates=20190801%2F20190915&bgcolor=%23FFFFFF&src=kthisd%40gmail.com&color=%232952A3&src=thskth.se_8a4otmpb9lg9elke39b99algu0@group.calendar.google.com&color=%231B887A&ctz=Europe%2FStockholm;%20&hl=en" scrolling="no" frameborder="0"></iframe>
-
-		<div id="button-box">
-			<button onclick="showEventSchedule()">Show More</button>
 		</div>
 	</div>
 	
 	<script type="text/javascript">
-		const releaseDate = new Date("2019-07-17T10:00:00.000Z");
-		const redirectURL = "https://ths.kth.se/";
-		const calendarURL = "https://www.kth.se/en/student/newatkth/degree-programme-stu/introduction-programme-1.713699";
-
-		setTime();
-		const timerInterval = setInterval(function() {
-			setTime();
-		}, 30000)
-
-		function setTime() {
-			const time = releaseDate.getTime() - Date.now();
-			if (time < 0) {
-				redirect();
-			}
-
-			const days = Math.floor(time / 1000 / 60 / 60 / 24);
-			const hours = Math.floor((time / 1000 / 60 / 60) % 24);
-			const minutes = Math.floor((time / 1000 / 60) % 60);
-			//const seconds = Math.floor((time/1000)%60 );
-
-			let dayString = leadingZero(days);
-			if (days === 1) dayString += " Day";
-			else dayString += " Days";
-			document.querySelector("#days").innerHTML = dayString;
-
-			let hourString = leadingZero(hours);
-			if (hours === 1) hourString += " Hour";
-			else hourString += " Hours";
-			document.querySelector("#hours").innerHTML = hourString;
-
-			let minuteString = leadingZero(minutes);
-			if (minutes === 1) minuteString += " Minute";
-			else minuteString += " Minutes";
-			document.querySelector("#minutes").innerHTML = minuteString;
-		}
-
-		function leadingZero(num) {
-			return num < 10 ? '0' + num : num;
-		}
+		const redirectURL = "https://international-reception.thskth.se/";
 
 		function redirect() {
 			location.href = redirectURL;
 		}
 
-		function showEventSchedule() {
-			window.open(calendarURL);
-		}
+		redirect();
 	</script>
 </body>
 </html>
